@@ -1,0 +1,11 @@
+version: '3.8'
+services:
+  auto-late:
+    build: .
+    ports:
+      - "2999:2999"
+    volumes:
+      - ./logs:/app/logs
+    env_file:
+      - .env
+    restart: unless-stopped
